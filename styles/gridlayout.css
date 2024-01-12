@@ -1,0 +1,33 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px) 50px 50px;
+    gap: 20px;
+}
+.div{
+    background-color: gray;
+}
+.div:first-child{
+    grid-row: span 5;
+}
+.div:nth-child(6), .div:nth-child(7),.div:nth-child(9), .div:nth-child(10){
+    background-color: tomato;
+}
+.div:nth-child(11), .div:nth-child(12){
+    grid-column: span 3;
+}
+
+@media screen and (max-width : 576px) {
+
+    .div{
+        background-color: tomato;
+    }
+    .div{
+        grid-column: span 3;
+        grid-row: span 5;
+    }
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1,1fr);
+    }
+}
